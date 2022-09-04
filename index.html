@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="assets/css/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Restola- Documentation</title>
+    <style>
+        .v-toolbar {
+            background-color: #E7272D !important;
+        }
+
+        .v-footer {
+            background-color: #E7272D !important;
+        }
+        .v-footer span{
+            width:100%;
+            text-align: center;
+        }
+        
+        .sub_menu .v-list__tile__action, .v-list__tile__avatar {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 56px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <template>
+                <v-app id="inspire">
+                    <v-navigation-drawer
+                      :clipped="$vuetify.breakpoint.lgAndUp"
+                      v-model="drawer"
+                      fixed
+                      app
+                    >
+                      <v-list dense>
+
+                          <v-list-tile href="#About">
+                            <v-list-tile-action>
+                              <v-icon>group_work</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>About</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                          <v-list-tile href="#installation">
+                            <v-list-tile-action>
+                              <v-icon>power_settings_new</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Installation</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                          <!------Frontend menu----->
+                          <v-list-tile href="#Home" style="border-bottom: 1px solid #dadada;">
+                            <v-list-tile-action>
+                              <v-icon>subject</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Frontend</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>                         
+                      
+                          
+                          <v-list-tile href="#Creat_account" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Create account</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Home" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Home</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Products" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Products</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Cart" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Cart</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Search" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Search</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Signin" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Sign in</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          <!------End of Frontend menu----->
+                          
+                           <!------Backend menu----->
+                          <v-list-tile href="#admin" style="border-bottom: 1px solid #dadada;">
+                            <v-list-tile-action>
+                              <v-icon>autorenew</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Backend</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Dashboard" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Dashboard</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                           <v-list-tile href="#Administration" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Administration</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                            <v-list-tile href="#Products" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Products</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                           <v-list-tile href="#Offers" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Offers</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                           <v-list-tile href="#Orders" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Order</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                          <v-list-tile href="#Customer" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Customers</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                        
+                         
+                          <v-list-tile href="#General" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>General Settings</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                         
+                          
+                         
+                    
+                          <v-list-tile href="#Report" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Report</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Settings" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Emailing User</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                           <v-list-tile href="#Sliders" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Slider</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          <!------End of Backend menu----->
+
+                        </v-list>
+                    </v-navigation-drawer>
+
+
+                    <v-toolbar color="indigo" dark fixed app>
+                        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+                        <v-toolbar-title>Restola- Documentation</v-toolbar-title>
+                    </v-toolbar>
+
+                    <v-content>
+                        <v-container fluid fill-height>
+                            <v-layout justify-center align-center>
+                                <v-flex text-xs-left>
+
+                                    <!---For user-------->
+                                    <!-- About  -->
+                                    <section id="About" class="mb-5">
+                                        <h1>About Restola</h1>
+                                        <span class="subheading">
+                                          Restola an online based Restaurent Management System that is<br>
+                                          fit for any type of Restaurant, Food shop, Catering, E-commerce <br>
+                                          and any type of restaurant related business.<br>
+                                        </span>
+                                    </section>
+
+                                  <!-- Installation  -->
+                                  <section id="installation">
+                                    <br><br><br><br>
+                                    <h1>Installation</h1>
+                                    <p>Install Restolain your server</p>
+                                    <v-divider class="my-3"></v-divider>
+                                    <h3>Free Installation</h3>
+                        
+                                    <img src="assets/images/free-installation.png"><br>
+                                    <p>
+                                      Well if you face any problem to install Restolain your server.<br>
+                                      We will provide a free installation support for you.<br>
+                                      Just send us an email. Will contact as soon as possible <br><br>
+                                      <b>Support Email: pukutech@gmail.com</b>
+                                    </p>
+                        
+                                    <h1>Installation Guide</h1><br>
+                                    <h3>Step 1: Create Database </h3>
+                                    <p>Restolais a database based system. 
+                                      So first of all you have to create a database in your server<br>
+                                    Go to phpMyAdmin in your server <br>
+                                    </p>
+                                    <img width="100%" src="assets/images/img/db_create.png"><br>
+                                    <p>Then click on <b>Databases</b> on top. Then write your database name, in these documentation, lets give the database name as <b>Restola_db</b></p>
+                                  
+                                    <p>Now this is your database</p>
+                                    <img width="50%" src="assets/images/img/db_name.png"><br><br>
+                                    <p>Click on <b>Import to add database</b></p>
+                                    <img width="50%" src="assets/images/img/importdb.png"><br><br>
+                                    <p>Click on <b>Choose file </b> button and select the sql file attached in the folder then select <b>Go</b></p>
+                                    <img width="50%" src="assets/images/img/importscrn.png"><br><br>
+                                    <p>All the tables have been imported</p>
+                                    <img width="70%" src="assets/images/img/importscrn1.png"><br><br> 
+                                                                        
+                                   
+                        
+                                    <br><br><br>                        
+                                    
+                                   
+                        
+                                    <h3>Step 2: Upload project folder to public_html </h3>
+                                    <p>
+                                      Zip the folder then upload to <b>public_html</b> folder in your hosting server.<br>
+                                      And unzip then refresh your URL.
+                                    </p>
+                        
+                                    <h3>Step 4: Update .env file </h3>
+                                    <p>In the project folder you will find .env file ,you will have to update the database name,database username and password</p> <br>                                      
+                                    <img width="50%" src="assets/images/img/env.png"><br><br>
+                                    
+                        
+                                   
+                                    <br><br><br>
+                                    </section>
+                                    
+                                    <!-- Home  -->
+                                    <section id="Home" class="mb-5">
+                                        <h1>Home</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>In home page you have Six section.</p>
+                                        <p><b>1.Slider</b></p>
+                                        <img width="100%" src="assets/images/img/slider.png">
+                                        <p><b>2.About Us </b></p>                                        
+                                        <img width="100%" src="assets/images/img/aboutus.png">
+                                        <p><b>3.Categories </b></p>
+                                        <img width="100%" src="assets/images/img/categories.png"><br><br>
+                                        <p><b>4.Popular Menu</b></p>
+                                        <img width="100%" src="assets/images/img/hotdeals.png"><br><br>
+                                        <p><b>5.Reservation Table</b></p>
+                                        <img width="100%" src="assets/images/img/reservation.png"><br><br>
+                                        <p><b>6.Send Email</b></p>
+                                        <img width="100%" src="assets/images/img/notification.png">
+                                    </section>
+                                    
+                                    <!--<section class="mb-5">
+                                        <h1>Menu</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <img width="100%" src="assets/images/img/menu.png">
+                                    </section>-->
+                                    
+                                   
+                                    <!---Signin--->
+                                    <section id="Signin" class="mb-5">
+                                       <h1>Sign in:</h1>
+                                       <v-divider class="my-3"></v-divider> 
+                                       <p>Click on <b>SIGNIN</b> menu.Give Email and Password and signin or you can sign in from facebook account</p>
+                                       <img width="100%" src="assets/images/img/signin.png">
+                                    </section>
+                                    
+                                    
+                                    <!-----Cart----->
+                                    <section id="Cart" class="mb-5">
+                                        <h1>Cart:</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>If you open your cart,there you will find your selected item.Here you can increase or decrease your item's quantity number and your total price will be given there.If you are done then select <b>Place Order</b> to make an order. </p>
+                                        <img width="100%" src="assets/images/img/cart.png"><br><br><br>
+                                        <p>Press <b>PROCEED TO CHECK OUT</b> and your order detais will be shown.</p>
+                                        <img width="100%" src="assets/images/img/placeorder.png"><br><br><br>
+                                        <p>At last press <b>PLACE ORDER</b> and a confirmation message will be shown.</p>
+                                        <img width="100%" src="assets/images/img/complete.png"><br><br><br>
+                                        <p>Now if you want to check your order,go to <b>MY Order</b> from menu </p>
+                                        <img width="100%" src="assets/images/img/nworder.png"><br><br><br>
+                                        
+                                        <p>Click on your item/product from the table and all your order history will be shown.</p>
+                                        <img width="100%" src="assets/images/img/orderdetails.png">
+                                    </section>
+                                    
+                                    <!------------------------------------------------------------->
+                                    <!------------------------For admin---------------------------->
+                                    <section id="admin" class="mb-5">
+                                        <h1>Admin</h1>
+                                        <p>How to access admin</p>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>If you want to go to admin pannel,first go to url link and type "/admin" and enter.Example is given below:</p>
+                                        <img width="100%" src="assets/images/img/adminlink.png"><br><br><br>
+
+                                        <p>Admin login page will open.</p>
+
+                                        <p>Give admin email and password and <b>SIGN IN</b></p>
+                                        <img width="100%" src="assets/images/img/adminlogin.png">
+                                    </section>
+                                    
+                                    <!----Dashboard---->
+                                    <section id="Dashboard" class="mb-5">
+                                        <h1>Dashboard</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>Dashboard is a summary of the business.</p>
+                                        <img width="100%" src="assets/images/img/admindashboard.png">
+                                    </section>
+
+                                     <section id="Administration" class="mb-5">
+                                        <h1>Administration</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Administration</b> menu has two sub menu.<b>Role</b> and <b>Manage Admin</b>.If ypu click on role it will show all the role you can assign to the user.</p>
+                                        <img width="100%" src="assets/images/img/role.png"><br><br><br>
+                                        
+                                        <p><b>Manage Admin</b> will show the admin list and you can also create new admin</p>
+                                        <img width="100%" src="assets/images/img/mangeadmin.png">
+                                       <img width="100%" src="assets/images/img/createadmin.png">
+
+                                    </section>
+                                    
+                                   
+                                    
+                                    <!----Products----> 
+                                    <section id="Products" class="mb-5">
+                                        <h1>Products</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Products</b> menu has 5 submenu.<b>1.Category</b>,<b>2.Sub Category</b>,<b>3.Brand</b>,<b>4.Sub Sub Category</b>,<b>5.Product</b></p>
+                                        <p><b>1.Category</b> will show all the category.At the right side of each category there is a edit and delete option that will help you to edit your categories.</p>
+                                        <img width="100%" src="assets/images/img/category.png"><br><br><br>
+                                        <p>You can add new category here. </p>
+                                        <img width="100%" src="assets/images/img/addcategory.png"><br><br><br>
+                                        <p><b>2.Sub Category</b> will show all the subcategory.At the right side of each subcategory there is a edit and delete option that will help you to edit your subcategories.</p>
+                                        <img width="100%" src="assets/images/img/subcategory.png"><br><br><br>
+                                        <p>You can add new subcategory here. </p>
+                                        <img width="100%" src="assets/images/img/addsubcategory.png"><br><br><br>
+
+                                        <p><b>3.Brand</b> will show all the brands.At the right side of each brand there is a edit and delete option that will help you to edit your brands.</p>
+                                        <img width="100%" src="assets/images/img/brand.png"><br><br><br>
+                                        <p>You can add new brand here. </p>
+                                        <img width="100%" src="assets/images/img/addbrand.png"><br><br><br>
+
+                                        <p><b>4.Sub Sub Category</b> will show all the sub sub category.At the right side of each sub sub category there is a edit and delete option that will help you to edit your sub sub categories.</p>
+                                        <img width="100%" src="assets/images/img/subsubcategory.png"><br><br><br>
+                                        <p>You can add new sub sub category here. </p>
+                                        <img width="100%" src="assets/images/img/addsubsubcategory.png"><br><br><br>
+
+                                        <p><b>5.Product</b> will show all the products.At the right side of each product there is a edit and delete option that will help you to edit your products.</p>
+                                        <img width="100%" src="assets/images/img/product.png"><br><br><br>
+                                        <p>You can add new product here. </p>
+                                        <img width="100%" src="assets/images/img/addproduct.png"><br><br><br>
+                                        
+                                    </section>
+
+                                     <section id="Offers" class="mb-5">
+                                        <h1>Offers</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Offers</b> menu has one sub menu.<b>Campaign</b>.If you click on Campaign it will show all the list of campaigns</p>
+                                        <img width="100%" src="assets/images/img/campaign.png"><br><br><br>
+                                        
+                                        <p>You can create new campaign by clicking on <b>Create New</b> button and you will get the following form</p>
+                                        <img width="100%" src="assets/images/img/addcampaign.png">
+                                    </section>
+
+
+                                       <section id="Orders" class="mb-5">
+                                        <h1>Order</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Order menu</b> has two submenu <b>1.All Order</b>,<b>My Area's Order</b></p>
+
+                                        <p>In this page there is also a list of all orders.When customer add products into the cart and check out, the order will add in the list.</p>
+                                        <img width="100%" src="assets/images/img/adminorder.png"><br><br><br>
+
+                                        <p>There is a view option on right side of every order, on clicking the icon you will get the following view</p>
+                                        <img width="100%" src="assets/images/img/adminorderdetails.png"><br><br><br>
+                                       <p><b>My Area's Order will give the list of area wise orders </b></p>
+                                        
+                                    </section>
+
+
+
+
+
+
+
+
+
+
+
+                                     <!----Customer---->
+                                    <section id="Customer" class="mb-5">
+                                        <h1>Customer</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>Here you will find a search option on the top and a list of  all customers.At the right side of each customer there is a view button which will dive the order details of the customer from the list.</p>
+                                        <img width="100%" src="assets/images/img/customers.png"><br><br><br>
+                                        <p>Click on any icon  you will find the individual cusomer's order details like the following</p>
+                                        <img width="100%" src="assets/images/img/vieworder.png">
+                                    </section>
+                                    
+                                    <!----Sales---->   
+                                   
+                                    
+                                    <!----Expenses----> 
+                                   
+                                 
+                                    
+                                    <!----Orders---->    
+                                 
+                                    
+                                    <!----Deliveries---->   
+                                    <section id="General" class="mb-5">
+                                        <h1>General Settings</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>General Settings</b> menu has 10 submenu.<br></p>
+                                        <p><b>1.Currency Setting</b>,<br>
+                                            <b>2.Shipping Cost Setting</b>,<br>
+                                            <b>3.Payment Gateway Setting.</b><br>
+                                            <b>4.Social Login Setting.</b><br>
+                                            <b>5.Shop Setting.</b><br>
+                                            <b>6.Page Setting.</b><br>
+                                            <b>7.SEO Setting.</b><br>
+                                            <b>8.Messenger & Google Analytics.</b><br>
+                                            <b>9.Mail Setting.</b><br>
+                                           <b>10.Order Area</b><br>
+
+
+
+
+
+
+                                        </p>
+                                        <p><b>1.Currency Setting</b> shows the list of currency.</p>
+                                        <img width="100%" src="assets/images/img/currency.png"><br><br><br>
+                                        <p> You can also add new currency by clicking <b>Create New</b>button </p>
+                                        <img width="100%" src="assets/images/img/addcurrency.png"><br><br><br>
+
+                                        <p><b>2.Shipping Cost Setting</b> is a form where you can add your shipping related settings.</p>
+                                        <img width="100%" src="assets/images/img/shipping.png"><br><br><br>
+                                       
+
+                                        <p><b>3.Payment Gateway Setting</b> shows all the payment options available.You can also edit information from the right side icon.</p>
+                                        <img width="100%" src="assets/images/img/payment.png"><br><br><br>
+
+
+                                         <p><b>4.Social Login Setting</b> shows all the social media options available.You can also edit information from the right side icon.</p>
+                                        <img width="100%" src="assets/images/img/social.png"><br><br><br>
+
+                                        <p>In <b>5.Shop Setting</b> shows the form where you can edit your shop information like shop name,address,phone,logo,color </p>
+                                        <img width="100%" src="assets/images/img/shop.png"><br><br><br>
+
+                                         <p>In <b>6.Page Setting</b> shows the list of pages available you can also add new page by clicking <b>Create New</b> button</p>
+                                        <img width="100%" src="assets/images/img/page.png"><br><br><br>
+                                        <img width="100%" src="assets/images/img/addpage.png"><br><br><br>
+
+                                        <p>
+                                        	From the right side icons you can view,edit,remove the pages
+                                        </p>
+                                        <img width="100%" src="assets/images/img/editpage.png"><br><br><br>
+
+                                        <p> <b>7.SEO Setting</b> shows the form where you can edit your seo information. </p>
+                                        <img width="100%" src="assets/images/img/seo.png"><br><br><br>
+
+                                        <p> <b>8.Messenger & Google Analytics Setting</b> shows the form where you can edit your messenger and google analytics information like page ID,Tracking ID </p>
+                                        <img width="100%" src="assets/images/img/msg.png"><br><br><br>
+
+
+                                        <p> <b>9.Mail Setting</b> shows the form where you can edit your mail settings information  </p>
+                                        <img width="100%" src="assets/images/img/smtp.png"><br><br><br>
+
+                                          <p><b>10.Order Area</b> shows  the area of your choice that you are going to deliver goods.</p>
+                                        <img width="100%" src="assets/images/img/area.png"><br><br><br>
+                                        <p>You can also add new are by clicking <b>Create New</b> button</p>
+
+                                       <img width="100%" src="assets/images/img/addarea.png"><br><br><br>
+
+
+
+                                    </section>
+
+                                     <section id="Settings" class="mb-5">
+                                        <h1>Emailing User</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>You can compose a mail and send it to the user right away from this system </p>
+                                        <img width="100%" src="assets/images/img/compose.png"><br><br><br>
+                                       
+                                        
+                                    </section>
+                                    
+                                    <!----Options----> 
+                                    <section id="Report" class="mb-5">
+                                        <h1>Report</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Report</b> menu has four submenu.</p>
+                                        <p><b>1.Stock Report</b></p>
+                                        <p><b>2.Sales Report</b></p>
+                                        <p><b>3.Invoice Report</b></p>
+                                        <p><b>4.Account Report</b></p>
+
+                                        <p><b>1.Stock Report</b> menu shows the stock report of the system</p>
+                                        <img width="100%" src="assets/images/img/stock.png"><br><br><br>
+
+                                        <p><b>2.Sales Report</b> menu shows the sales report of the system</p>
+                                        <img width="100%" src="assets/images/img/sales.png"><br><br><br>
+                                       
+                                        <p><b>3.Invoice Report</b> menu shows the invoice report of the system</p>
+                                        <img width="100%" src="assets/images/img/invoice.png"><br><br><br>
+                                       
+
+
+                                        <p><b>4.Account Report</b> menu shows the accounts related report of the system</p>
+                                        <img width="100%" src="assets/images/img/account.png"><br><br><br>
+                                        <p>You can get the reports in excel,pdf and also can print the reports by clicking button below the table </p>
+                                    </section>
+                                    
+                                    <!---Reviews--->
+                                   
+                                    
+                                    <!---Report--->
+                                    <section id="Sliders" class="mb-5">
+                                        <h1>Slider</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Slider</b> menu shows the list of all slider images.</p>
+                                        <img width="100%" src="assets/images/img/slidelist.png"><br><br><br>
+                                        <p>You can also add new slider image by clicking <b>Create New</b> button</p>
+                                        <img width="100%" src="assets/images/img/addslider.png"><br><br><br>
+                                    </section>
+                                        
+                                    
+
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-content>
+
+                   
+                </v-app>
+            </template>
+        </v-app>
+    </div>
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/vuetify.js"></script>
+    <script>
+       new Vue({
+      el: '#app',
+      data: () => ({
+        drawer: null
+    
+      }),
+      props: {
+        source: String
+      }
+    })
+    </script>
+
+</body>
+
+</html>
